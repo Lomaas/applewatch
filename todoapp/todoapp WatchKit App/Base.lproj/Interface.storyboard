@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8066.14"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="todoapp_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="39T-3r-HM9">
+                            <items>
+                                <tableRow identifier="mainRowType" id="I0N-Xb-zif" customClass="TodoRowController" customModule="todoapp">
+                                    <group key="rootItem" width="1" alignment="left" id="Gy8-1Z-sHu">
+                                        <items>
+                                            <label width="86" height="42" alignment="left" text="Wash diches" minimumScaleFactor="0.69999999999999996" id="fnh-fb-MWi">
+                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                            </label>
+                                            <imageView alignment="left" verticalAlignment="center" image="checkbox" contentMode="scaleAspectFit" id="t36-Pz-I2Y"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="checkbox" destination="t36-Pz-I2Y" id="qu0-gU-a2D"/>
+                                        <outlet property="title" destination="fnh-fb-MWi" id="Ccl-Pm-kM9"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="tableView" destination="39T-3r-HM9" id="Ryc-yw-c6U"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="164" y="217"/>
+        </scene>
+    </scenes>
+</document>
