@@ -10,6 +10,7 @@ import WatchKit
 
 class TodoRowController: NSObject {
     
-    @IBOutlet var checkbox: WKInterfaceImage!
-    @IBOutlet var title: WKInterfaceLabel!
+    @IBOutlet weak var checkbox: WKInterfaceImage!
+
+    @IBOutlet var rowTitle: WKInterfaceLabel!
 }

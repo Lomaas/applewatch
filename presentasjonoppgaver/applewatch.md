@@ -127,16 +127,30 @@ git@github.com:Lomaas/boilerplate.git
 
 # Vis todo's
 
-![inline](todolist.png)
+![inline](finishedproduct.png)
 
 https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/Tables.html
+
+---
+
+# Start
+
+- Start i Interface.storyboard hvor grensesnittet defineres
+- Dra inn tableView
+
+![inline50%](storyboardlocation.png)
+
+- Konfiguer table row etter ønske. F. eks en tittel label, dato label og et bilde
+
 
 ---
 
 # TableView - storyboard
 
 
-![inline](tableview.png)
+![inline](tableview.png) 
+
+- Husk å sette identifier string og custom klasse for TableRowController
 
 ---
 
@@ -145,6 +159,28 @@ https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKi
 ![inline](connectoutlet.png)
 
 ctrl-click label og drag inn i TodoRowController
+ 
+---
+
+# Configure TableView
+
+1. Create some fake data
+2. Set number of rows and configure each row controller
+
+```swift
+tableView.setNumberOfRows..
+let row = tableView.rowControllerAtIndex...
+```
+
+---
+
+# Complete task
+
+- Implementer
+
+```swift
+   func table(_ table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int)
+```
 
 ---
 

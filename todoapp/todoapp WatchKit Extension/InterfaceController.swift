@@ -11,21 +11,44 @@ import Foundation
 
 
 class InterfaceController: WKInterfaceController {
-
+    struct constants {
+        static let rowTypeIdentifier = "mainRowType"
+    }
+    
+    var tableData = [
+        Todo(title: "Wash diches", date: NSDate()),
+        Todo(title: "Buy milk", date: NSDate()),
+        Todo(title: "Read doc.", date: NSDate())
+    ]
+    
     @IBOutlet var tableView: WKInterfaceTable!
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
+        configureTable()
+    }
+    
+    override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
+        tableData.removeAtIndex(rowIndex)
+        configureTable()
     }
 
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
     }
 
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
 
+    private func configureTable() {
+        tableView.setNumberOfRows(tableData.count, withRowType: InterfaceController.constants.rowTypeIdentifier)
+        print("row data: \(tableView.numberOfRows)")
+        
+        for index in 0...tableView.numberOfRows - 1 {
+            let row = tableView.rowControllerAtIndex(index) as! TodoRowController
+            let todo = tableData[index]
+            row.rowTitle.setText(todo.title)
+        }
+    }
 }
