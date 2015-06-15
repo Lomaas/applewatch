@@ -45,7 +45,7 @@ class InterfaceController: WKInterfaceController {
         tableView.setNumberOfRows(tableData.count, withRowType: InterfaceController.constants.rowTypeIdentifier)
         print("row data: \(tableView.numberOfRows)")
         
-        for index in 0...tableView.numberOfRows - 1 {
+        for var index = 0; index < tableView.numberOfRows; index++ {
             let row = tableView.rowControllerAtIndex(index) as! TodoRowController
             let todo = tableData[index]
             row.rowTitle.setText(todo.title)
