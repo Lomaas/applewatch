@@ -204,6 +204,7 @@ let row = tableView.rowControllerAtIndex...
 - Bonus støtt timeline.  
 - https://developer.apple.com/library/prerelease/watchos/documentation/ClockKit/Reference/ClockKit_framework/index.html
 
+![alt tag](https://raw.github.com/lomaas/boilerplate/master/complications.png)
 ![inline](complications.png)
 
 
