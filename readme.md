@@ -103,8 +103,9 @@ let row = tableView.rowControllerAtIndex...
 # Legg til force touch
 
 - Finn på en action og implementer ved bruk av force-touch
+- Hjelpekilde:
 
-![alt tag](https://github.com/Lomaas/boilerplate/blob/master/presentasjonoppgaver/force-touch.mp4?raw=true)
+https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/Menus.html
 
 ---
 
