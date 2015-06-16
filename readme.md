@@ -15,16 +15,20 @@
 
 # Prosjekt
 
-Oppsett følg guide
+1. Åpne XCode
+2. Create new project
+3. Under watchOS, velg Application og så iOS App with WatchKit App
+4. Velg navn, la resten være urørt. Alt kan endres senere
+
+Oppsett for eksisterende prosjekt:
 
 https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/ConfiguringYourXcodeProject.html
-
 
 eller last ned dette prosjektet som har basic setup
 
 ---
 
-# Vis todo's
+# 1: Vis todo's i en tabell
 
 ![alt tag](https://github.com/Lomaas/boilerplate/blob/master/presentasjonoppgaver/finishedproduct.png?raw=true)
 
@@ -72,7 +76,7 @@ let row = tableView.rowControllerAtIndex...
 
 ---
 
-# Complete task
+# 2: Complete task
 
 - Implementer didSelectRowAtIndex for å håndtere klikk på en row
 
@@ -82,7 +86,7 @@ let row = tableView.rowControllerAtIndex...
 
 ---
 
-# Complication
+# 3: Complication
 
 - Legg til todo som er kortest tid til basert på dato som complication (komponent på watchface)
 - Bonus: støtt timeline.
@@ -92,13 +96,13 @@ let row = tableView.rowControllerAtIndex...
 
 ---
 
-# Kommunikasjon med iPhone
+# 4: Kommunikasjon med iPhone
 
 - Send beskjed til iPhone app når bruker fullfører en todo får å synce state
 
 ---
 
-# Legg til force touch
+# 5: Legg til force touch
 
 - Finn på en action og implementer ved bruk av force-touch
 - Hjelpekilde:
