@@ -10,7 +10,6 @@
 # Oppgaver 
 
 - Todo-app for Apple Watch
-
 --- 
 
 # Prosjekt
@@ -25,6 +24,12 @@ Oppsett for eksisterende prosjekt:
 https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/ConfiguringYourXcodeProject.html
 
 eller last ned dette prosjektet som har basic setup
+
+App kjøres ved å velge WatchKit App build scheme:
+
+![alt tag](https://github.com/Lomaas/boilerplate/blob/master/presentasjonoppgaver/runapp1.png?raw=true)
+![alt tag](https://github.com/Lomaas/boilerplate/blob/master/presentasjonoppgaver/runapp2.png?raw=true)
+
 
 ---
 
