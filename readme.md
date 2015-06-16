@@ -58,14 +58,14 @@ git@github.com:Lomaas/boilerplate.git
 
 ![alt tag](https://github.com/Lomaas/boilerplate/blob/master/presentasjonoppgaver/connectoutlet.png?raw=true)
 
-ctrl-click label og drag inn i TodoRowController
+ctrl-click label og dra inn i TodoRowController
  
 ---
 
 # Configure TableView
 
-1. Create some fake data
-2. Set number of rows and configure each row controller
+1. Lag noe fake data for å teste presentasjonen av dataen 
+2. Sett antall rader og konfigurer hver rad med metodene nedenfor
 
 ```swift
 tableView.setNumberOfRows..
@@ -76,7 +76,7 @@ let row = tableView.rowControllerAtIndex...
 
 # Complete task
 
-- Implementer
+- Implementer didSelectRowAtIndex for å håndtere klikk på en row
 
 ```swift
    func table(_ table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int)
@@ -84,20 +84,27 @@ let row = tableView.rowControllerAtIndex...
 
 ---
 
-# Legg til force touch
-
-- Legg til ny todo når bruker longpresser
-
-![alt tag](https://github.com/Lomaas/boilerplate/blob/master/presentasjonoppgaver/force-touch.mp4?raw=true)
-
----
-
 # Complication
 
-- Legg til todo som er kortest til basert på dato som complication (komponent på watchface)
-- Bonus støtt timeline.  
+- Legg til todo som er kortest tid til basert på dato som complication (komponent på watchface)
+- Bonus: støtt timeline.
 - https://developer.apple.com/library/prerelease/watchos/documentation/ClockKit/Reference/ClockKit_framework/index.html
 
 ![alt tag](https://github.com/Lomaas/boilerplate/blob/master/presentasjonoppgaver/complications.png?raw=true)
 
 ---
+
+# Kommunikasjon med iPhone
+
+- Send beskjed til iPhone app når bruker fullfører en todo får å synce state
+
+---
+
+# Legg til force touch
+
+- Finn på en action og implementer ved bruk av force-touch
+
+![alt tag](https://github.com/Lomaas/boilerplate/blob/master/presentasjonoppgaver/force-touch.mp4?raw=true)
+
+---
+
