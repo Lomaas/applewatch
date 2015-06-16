@@ -20,11 +20,7 @@
 		8535767E1B2F58310090C9B7 /* todoapp WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8535767D1B2F58310090C9B7 /* todoapp WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		853576831B2F58310090C9B7 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853576821B2F58310090C9B7 /* InterfaceController.swift */; };
 		853576851B2F58310090C9B7 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853576841B2F58310090C9B7 /* ExtensionDelegate.swift */; };
-		853576871B2F58310090C9B7 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853576861B2F58310090C9B7 /* GlanceController.swift */; };
-		853576891B2F58310090C9B7 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853576881B2F58310090C9B7 /* ComplicationController.swift */; };
 		8535768B1B2F58310090C9B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8535768A1B2F58310090C9B7 /* Assets.xcassets */; };
-		853576A31B2F64350090C9B7 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853576A21B2F64350090C9B7 /* Todo.swift */; };
-		853576AA1B2F6EEA0090C9B7 /* TodoRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853576A91B2F6EEA0090C9B7 /* TodoRowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,12 +100,8 @@
 		8535767D1B2F58310090C9B7 /* todoapp WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "todoapp WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		853576821B2F58310090C9B7 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		853576841B2F58310090C9B7 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		853576861B2F58310090C9B7 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
-		853576881B2F58310090C9B7 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		8535768A1B2F58310090C9B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8535768C1B2F58310090C9B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		853576A21B2F64350090C9B7 /* Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = SOURCE_ROOT; };
-		853576A91B2F6EEA0090C9B7 /* TodoRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoRowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,7 +217,6 @@
 		853576A41B2F65940090C9B7 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				853576A21B2F64350090C9B7 /* Todo.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -234,8 +225,6 @@
 			isa = PBXGroup;
 			children = (
 				853576821B2F58310090C9B7 /* InterfaceController.swift */,
-				853576861B2F58310090C9B7 /* GlanceController.swift */,
-				853576881B2F58310090C9B7 /* ComplicationController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -243,7 +232,6 @@
 		853576A61B2F65B70090C9B7 /* cells */ = {
 			isa = PBXGroup;
 			children = (
-				853576A91B2F6EEA0090C9B7 /* TodoRowController.swift */,
 			);
 			name = cells;
 			sourceTree = "<group>";
@@ -464,12 +452,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				853576AA1B2F6EEA0090C9B7 /* TodoRowController.swift in Sources */,
 				853576851B2F58310090C9B7 /* ExtensionDelegate.swift in Sources */,
-				853576891B2F58310090C9B7 /* ComplicationController.swift in Sources */,
 				853576831B2F58310090C9B7 /* InterfaceController.swift in Sources */,
-				853576871B2F58310090C9B7 /* GlanceController.swift in Sources */,
-				853576A31B2F64350090C9B7 /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,31 +8,7 @@
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="todoapp_WatchKit_App" customModuleProvider="target">
-                    <items>
-                        <table alignment="left" id="39T-3r-HM9">
-                            <items>
-                                <tableRow identifier="mainRowType" id="I0N-Xb-zif" customClass="TodoRowController" customModule="todoapp_WatchKit_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="Gy8-1Z-sHu">
-                                        <items>
-                                            <label width="86" height="42" alignment="left" text="Wash diches" minimumScaleFactor="0.69999999999999996" id="fnh-fb-MWi">
-                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
-                                            </label>
-                                            <imageView width="25" height="28" alignment="right" verticalAlignment="center" image="circle" contentMode="scaleAspectFit" id="t36-Pz-I2Y"/>
-                                        </items>
-                                    </group>
-                                    <connections>
-                                        <outlet property="checkbox" destination="t36-Pz-I2Y" id="8t4-hY-srs"/>
-                                        <outlet property="rowTitle" destination="fnh-fb-MWi" id="M5f-9b-jjt"/>
-                                    </connections>
-                                </tableRow>
-                            </items>
-                        </table>
-                    </items>
-                    <connections>
-                        <outlet property="tableView" destination="39T-3r-HM9" id="Jg8-u0-w75"/>
-                    </connections>
-                </controller>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="todoapp_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="164" y="217"/>
         </scene>
