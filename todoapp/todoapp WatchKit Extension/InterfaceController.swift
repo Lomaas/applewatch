@@ -8,12 +8,11 @@
 
 import WatchKit
 import Foundation
+import WatchCom
 
 
 class InterfaceController: WKInterfaceController {
-    struct constants {
-        static let rowTypeIdentifier = "mainRowType"
-    }
+    static let rowTypeIdentifier = "mainRowType"
     
     var tableData = [
         Todo(title: "Wash diches", date: NSDate()),
@@ -25,6 +24,10 @@ class InterfaceController: WKInterfaceController {
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
+        WKInterfaceController.openParentApplication(["r" : "fsf"]) {
+            (replyInfo, error) -> Void in
+            
+        }
         configureTable()
     }
     
@@ -42,7 +45,7 @@ class InterfaceController: WKInterfaceController {
     }
 
     private func configureTable() {
-        tableView.setNumberOfRows(tableData.count, withRowType: InterfaceController.constants.rowTypeIdentifier)
+        tableView.setNumberOfRows(tableData.count, withRowType: InterfaceController.rowTypeIdentifier)
         print("row data: \(tableView.numberOfRows)")
         
         for var index = 0; index < tableView.numberOfRows; index++ {
