@@ -79,10 +79,12 @@ let row = tableView.rowControllerAtIndex...
 # 2: Complete task
 
 - Implementer didSelectRowAtIndex for å håndtere klikk på en row
+- Fullfør Todo ved å fjerne todoen fra tabell og refresh GUI
 
 ```swift
    func table(_ table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int)
 ```
+- Bonus: Animer bytt bilde i row til et checkmarked bilde for så å fjerne todoen fra tabell
 
 ---
 
@@ -99,6 +101,10 @@ let row = tableView.rowControllerAtIndex...
 # 4: Kommunikasjon med iPhone
 
 - Send beskjed til iPhone app når bruker fullfører en todo får å synce state
+
+```swift
+	
+```
 
 ---
 
