@@ -9,8 +9,6 @@
 import WatchKit
 
 class TodoRowController: NSObject {
-    
     @IBOutlet weak var checkbox: WKInterfaceImage!
-
     @IBOutlet var rowTitle: WKInterfaceLabel!
 }

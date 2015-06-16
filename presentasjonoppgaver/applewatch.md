@@ -93,9 +93,6 @@
 
 # Kommunikasjon
 
-- Direkte via closures syntax
-	- Open Parent Application
-	- AppDelegate får request og responderer
 - Watch Connectivity framework
 - WCSession fra Apple Watch:
 
@@ -104,6 +101,9 @@
         session.delegate = self
         session.activateSession()
 ```
+---
+
+# Kommunikasjon
 
 - I iOS-app:
 
@@ -121,8 +121,6 @@
         print("Error sending data to watchapp: \(error.localizedDescription)")
     }
 ```
-
-- When only one session is active, the active session may still send updates and transfer files, but those transfers happen opportunistically in the background.
 
 ---
 

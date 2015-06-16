@@ -15,11 +15,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     static let rowTypeIdentifier = "mainRowType"
     let session = WCSession.defaultSession()
 
-    var tableData = [
-        Todo(title: "Wash diches", date: NSDate()),
-        Todo(title: "Buy milk", date: NSDate()),
-        Todo(title: "Read doc.", date: NSDate())
-    ]
+    var tableData = [Todo(title: "tet", date: NSDate())]
     
     @IBOutlet var tableView: WKInterfaceTable!
     
@@ -28,6 +24,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         
         session.delegate = self
         session.activateSession()
+        configureTable()
     }
     
     func session(session: WCSession, didFinishUserInfoTransfer userInfoTransfer: WCSessionUserInfoTransfer, error: NSError?) {

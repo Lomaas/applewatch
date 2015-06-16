@@ -21,11 +21,13 @@ class ViewController: UIViewController {
         }
     }
 
+    @IBOutlet weak var status: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         let session = WCSession.defaultSession()
         do {
             print("trying to send data")
+            status.text = "trying to send data"
             try session.updateApplicationContext([
                 "todos" : [
                     ["title" : "Wash diches", "date": NSDate()],
@@ -35,6 +37,7 @@ class ViewController: UIViewController {
             ])
         } catch let error as NSError {
             print("Error sending data to watchapp: \(error.localizedDescription)")
+            status.text = "Error sending data"
         }
     }
 }
