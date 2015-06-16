@@ -28,8 +28,6 @@ eller last ned dette prosjektet som har basic setup
 App kjøres ved å velge WatchKit App build scheme:
 
 ![alt tag](https://github.com/Lomaas/boilerplate/blob/master/presentasjonoppgaver/runapp1.png?raw=true)
-![alt tag](https://github.com/Lomaas/boilerplate/blob/master/presentasjonoppgaver/runapp2.png?raw=true)
-
 
 ---
 
