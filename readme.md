@@ -20,9 +20,7 @@ Oppsett følg guide
 https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/ConfiguringYourXcodeProject.html
 
 
-eller last ned boilerplate prosjekt:
-
-git@github.com:Lomaas/boilerplate.git
+eller last ned dette prosjektet som har basic setup
 
 ---
 
