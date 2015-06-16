@@ -8,12 +8,13 @@
 
 import WatchKit
 import Foundation
-import WatchCom
+import WatchConnectivity
 
 
-class InterfaceController: WKInterfaceController {
+class InterfaceController: WKInterfaceController, WCSessionDelegate {
     static let rowTypeIdentifier = "mainRowType"
-    
+    let session = WCSession.defaultSession()
+
     var tableData = [
         Todo(title: "Wash diches", date: NSDate()),
         Todo(title: "Buy milk", date: NSDate()),
@@ -24,11 +25,24 @@ class InterfaceController: WKInterfaceController {
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        WKInterfaceController.openParentApplication(["r" : "fsf"]) {
-            (replyInfo, error) -> Void in
-            
-        }
-        configureTable()
+        
+        session.delegate = self
+        session.activateSession()
+    }
+    
+    func session(session: WCSession, didFinishUserInfoTransfer userInfoTransfer: WCSessionUserInfoTransfer, error: NSError?) {
+        print("DidFinish UserInfoTransfer: \(userInfoTransfer.userInfo)")
+    }
+    
+    func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
+        print("didReceiveUserInfo")
+    }
+    
+    func sessionWatchStateDidChange(session: WCSession) {
+        print("sessionWatchStateDidChange")
+    }
+    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
+        parseData(applicationContext)
     }
     
     override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
@@ -38,12 +52,27 @@ class InterfaceController: WKInterfaceController {
 
     override func willActivate() {
         super.willActivate()
+        let dict = session.receivedApplicationContext
+        parseData(dict)
     }
-
+    
     override func didDeactivate() {
         super.didDeactivate()
     }
-
+    
+    private func parseData(dict: [String : AnyObject]) {
+        if let data = dict["todos"] as? [AnyObject] {
+            print("Todos: \(data)")
+            
+            tableData = data.map({ (elem) -> Todo in
+                let title = elem["title"] as? String ?? "failed to parse"
+                let date = elem["date"] as? NSDate ?? NSDate()
+                return Todo(title: title, date: date)
+            })
+            configureTable()
+        }
+    }
+    
     private func configureTable() {
         tableView.setNumberOfRows(tableData.count, withRowType: InterfaceController.rowTypeIdentifier)
         print("row data: \(tableView.numberOfRows)")

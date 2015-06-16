@@ -97,11 +97,32 @@
 	- Open Parent Application
 	- AppDelegate får request og responderer
 - Watch Connectivity framework
+- WCSession fra Apple Watch:
 
 ```swift
-
+        let session = WCSession.defaultSession()
+        session.delegate = self
+        session.activateSession()
 ```
 
+- I iOS-app:
+
+```swift
+	let session = WCSession.defaultSession()
+    do {
+        try session.updateApplicationContext([
+            "todos" : [
+                Todo(title: "Wash diches", date: NSDate()),
+                Todo(title: "Buy milk", date: NSDate()),
+                Todo(title: "Read doc.", date: NSDate())
+            ]
+        ])
+    } catch let error as NSError {
+        print("Error sending data to watchapp: \(error.localizedDescription)")
+    }
+```
+
+- When only one session is active, the active session may still send updates and transfer files, but those transfers happen opportunistically in the background.
 
 ---
 
