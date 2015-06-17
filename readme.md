@@ -55,29 +55,31 @@ App kjøres ved å velge WatchKit App build scheme:
  
 ![alt tag](https://github.com/Lomaas/boilerplate/blob/master/presentasjonoppgaver/tableview.png?raw=true)
 
+---
+
 - Husk å sette identifier string og custom klasse for TableRowController
 
 ![alt tag](https://github.com/Lomaas/boilerplate/blob/master/presentasjonoppgaver/rowidentifier.png?raw=true)
-
----
 
 # Custom row
 
 ![alt tag](https://github.com/Lomaas/boilerplate/blob/master/presentasjonoppgaver/connectoutlet.png?raw=true)
 
-ctrl-click label og dra inn i TodoRowController
+- ctrl-click label og dra inn i TodoRowController
+- Alle interface objekter som er definert i Storyboard kan du få en referanse til (IBOutlet) til ved å ctrl-click og så drag inn i klasser. 
 
 ---
 
 # Configure TableView
 
 1. Lag noe fake data for å teste presentasjonen av dataen 
-2. Sett antall rader og konfigurer hver rad med metodene nedenfor
+2. Sett antall rader og konfigurer hver rad med rowControllerAtIndex
 
 ```swift
 tableView.setNumberOfRows..
-let row = tableView.rowControllerAtIndex...
+let row = tableView.rowControllerAtIndex(...)
 ```
+
 PS: Du må ctrl-click og dra en tableView referanse inn i InterfaceController. Det er denne variabelen du bruker i koden ovenfor
 
 ---
@@ -90,6 +92,9 @@ PS: Du må ctrl-click og dra en tableView referanse inn i InterfaceController. D
 ```swift
    func table(_ table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int)
 ```
+
+- Bonus: Gjør det samme bare med en UIButton definert i hver row
+Tips: ctrl-click & dra inn i custom row -klasse, velg action (IBAction) istedet for IBOutlet
 
 ---
 
