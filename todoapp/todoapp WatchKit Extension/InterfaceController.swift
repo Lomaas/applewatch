@@ -37,6 +37,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
     func sessionWatchStateDidChange(session: WCSession) {
         print("sessionWatchStateDidChange")
+    
     }
     func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
         parseData(applicationContext)
