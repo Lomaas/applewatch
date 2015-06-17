@@ -92,19 +92,56 @@
 ---
 
 # Kommunikasjon
-
-- Direkte via closures syntax
-	- Open Parent Application
-	- AppDelegate får request og responderer
 - Watch Connectivity framework
+- I iOS-app:
 
 ```swift
-
+	let session = WCSession.defaultSession()
+    do {
+        try session.updateApplicationContext([
+	        "todos" : [
+	            ["title" : "Wash diches", "date": NSDate()],
+	            ["title" : "Buy milk", "date": NSDate()],
+	            ["title" : "Read doc.", "date": NSDate()]
+	        ]
+        ])
+    } catch let error as NSError {
+        print("Error sending data to watchapp: \(error.localizedDescription)")
+    }
 ```
-
 
 ---
 
+# Kommunikasjon
+
+- På watch:
+
+```swift
+override func awakeWithContext(context: AnyObject?) {
+    super.awakeWithContext(context)
+
+    let session = WCSession.defaultSession()
+    session.delegate = self
+    session.activateSession()
+
+    if let todosArray = context as? [AnyObject] {
+    	// parse todos...
+    } 
+}
+```
+
+---
+
+# Kommunikasjon
+
+```swift
+func session(session: WCSession, didReceiveApplicationContext applicationContext: [	String : AnyObject]) {
+	parseData(applicationContext)
+}
+
+```
+
+---
 
 # Resources
 - https://developer.apple.com/watch/human-interface-guidelines/

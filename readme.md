@@ -104,9 +104,20 @@ let row = tableView.rowControllerAtIndex...
 # 4: Kommunikasjon med iPhone
 
 - Send beskjed til iPhone app når bruker fullfører en todo får å synce state
+- Lagre Todo i iOS-app med NSUserdefaults
 
 ```swift
-	
+let session = WCSession.defaultSession()
+session.delegate = self
+session.activateSession()
+
+func session(session: WCSession, didReceiveApplicationContext applicationContext: [	String : AnyObject])...
+
+```
+- iOS:
+```swift
+let session = WCSession.defaultSession()
+session.updateApplicationContext..
 ```
 
 ---
