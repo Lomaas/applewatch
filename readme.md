@@ -87,23 +87,27 @@ let row = tableView.rowControllerAtIndex...
 ```swift
    func table(_ table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int)
 ```
-- Bonus: Animer bytt bilde i row til et checkmarked bilde for så å fjerne todoen fra tabell
 
 ---
-
 
 # 3: Kommunikasjon med iPhone
 
 - Send todos fra iPhone istedet for å hardkode i Watch-app
-- Send beskjed til iPhone app når bruker fullfører en todo får å synce state
+- Send beskjed til iPhone app fra Watch når bruker fullfører en todo får å synce state
 - Lagre Todo's i iOS-app med NSUserdefaults
-- På Watch kan man motta data ved WCSession delegate. Eller rett fra awakeWithContext
+- På Watch kan man motta data fra iPhone app med WCSession og delegation pattern. Hvis iPhone app allerede har sendt ny fresh data vil man kunne hente den dataen rett i awakeWithContext i WKInterfaceController
 
+- Eksempel
 ```swift
 let session = WCSession.defaultSession()
 session.delegate = self
 session.activateSession()
 
+```
+
+- Implementer delegate:
+
+```swift
 func session(session: WCSession, didReceiveApplicationContext applicationContext: [	String : AnyObject]) {
 	
 	// Do something with applicationContext
@@ -111,11 +115,11 @@ func session(session: WCSession, didReceiveApplicationContext applicationContext
 
 ```
 
-- iOS:
+- For å sende data fra iOS app:
 
 ```swift
 let session = WCSession.defaultSession()
-session.updateApplicationContext..
+session.updateApplicationContext(..)
 ```
 
 ---
@@ -144,6 +148,7 @@ https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKi
 # 6: Notifikasjon
 
 - Lag og send notifikasjon når det er en time igjen til tidsfrist for Todo går ut
+- Kode for å registere iOS appen for å bruke notifikasjon. Edit action1 eller legg til flere for flere actions på notifikasjon
 
 ```swift
 let notificationSettings: UIUserNotificationSettings! = UIApplication.sharedApplication().currentUserNotificationSettings()
@@ -169,6 +174,8 @@ let types = UIUserNotificationType.Alert | UIUserNotificationType.Sound
 let settings = UIUserNotificationSettings(forTypes: types, categories: categories as Set<NSObject>)
 UIApplication.sharedApplication().registerUserNotificationSettings(settings)
 ```
+
+- For å lage notifikasjon brukes UILocalNotification:
 
 ```swift
 let notification = UILocalNotification()
