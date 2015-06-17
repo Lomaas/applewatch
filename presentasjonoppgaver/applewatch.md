@@ -153,6 +153,8 @@ func session(session: WCSession, didReceiveApplicationContext applicationContext
 
 - Todo-app for Apple Watch
 
+![inline](todolist.png)
+
 --- 
 
 # Prosjekt
