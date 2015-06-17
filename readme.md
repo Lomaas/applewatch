@@ -91,34 +91,44 @@ let row = tableView.rowControllerAtIndex...
 
 ---
 
-# 3: Complication
 
-- Legg til todo som er kortest tid til basert på dato som complication (komponent på watchface)
-- Bonus: støtt timeline.
-- https://developer.apple.com/library/prerelease/watchos/documentation/ClockKit/Reference/ClockKit_framework/index.html
+# 3: Kommunikasjon med iPhone
 
-![alt tag](https://github.com/Lomaas/boilerplate/blob/master/presentasjonoppgaver/complications.png?raw=true)
-
----
-
-# 4: Kommunikasjon med iPhone
-
+- Send todos fra iPhone istedet for å hardkode i Watch-app
 - Send beskjed til iPhone app når bruker fullfører en todo får å synce state
-- Lagre Todo i iOS-app med NSUserdefaults
+- Lagre Todo's i iOS-app med NSUserdefaults
+- På Watch kan man motta data ved WCSession delegate. Eller rett fra awakeWithContext
 
 ```swift
 let session = WCSession.defaultSession()
 session.delegate = self
 session.activateSession()
 
-func session(session: WCSession, didReceiveApplicationContext applicationContext: [	String : AnyObject])...
+func session(session: WCSession, didReceiveApplicationContext applicationContext: [	String : AnyObject]) {
+	
+	// Do something with applicationContext
+}
 
 ```
+
 - iOS:
+
 ```swift
 let session = WCSession.defaultSession()
 session.updateApplicationContext..
 ```
+
+---
+
+# 4, 5, 6 kan gjøres uavhengig av rekkefølge
+
+# 4: Complication
+
+- Legg til todo som er kortest tid til basert på dato som complication (komponent på watchface)
+- Bonus: støtt timeline.
+- https://developer.apple.com/library/prerelease/watchos/documentation/ClockKit/Reference/ClockKit_framework/index.html
+
+![alt tag](https://github.com/Lomaas/boilerplate/blob/master/presentasjonoppgaver/complications.png?raw=true)
 
 ---
 
@@ -131,3 +141,40 @@ https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKi
 
 ---
 
+# 6: Notifikasjon
+
+- Lag og send notifikasjon når det er en time igjen til tidsfrist for Todo går ut
+
+```swift
+let notificationSettings: UIUserNotificationSettings! = UIApplication.sharedApplication().currentUserNotificationSettings()
+
+if (notificationSettings.types != UIUserNotificationType.None){
+    return
+}
+
+let action1 = UIMutableUserNotificationAction()
+action1.activationMode = UIUserNotificationActivationMode.Background
+action1.title = "Complete"
+action1.identifier = notificationActionOneIdent
+action1.destructive = false
+action1.authenticationRequired = false
+
+let actionCategory = UIMutableUserNotificationCategory()
+actionCategory.identifier = notificationCategoryIdent
+actionCategory.setActions([action1], forContext: UIUserNotificationActionContext.Minimal)
+
+let categories = NSSet(object: actionCategory)
+let types = UIUserNotificationType.Alert | UIUserNotificationType.Sound
+
+let settings = UIUserNotificationSettings(forTypes: types, categories: categories as Set<NSObject>)
+UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+```
+
+```swift
+let notification = UILocalNotification()
+// Set alertbody, alerttitle, firedate,
+
+UIApplication.sharedApplication().scheduleLocalNotification(notification)
+
+
+```
