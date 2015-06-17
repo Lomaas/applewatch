@@ -57,6 +57,8 @@ App kjøres ved å velge WatchKit App build scheme:
 
 - Husk å sette identifier string og custom klasse for TableRowController
 
+![alt tag](https://github.com/Lomaas/boilerplate/blob/master/presentasjonoppgaver/rowidentifier.png?raw=true)
+
 ---
 
 # Custom row
@@ -64,7 +66,7 @@ App kjøres ved å velge WatchKit App build scheme:
 ![alt tag](https://github.com/Lomaas/boilerplate/blob/master/presentasjonoppgaver/connectoutlet.png?raw=true)
 
 ctrl-click label og dra inn i TodoRowController
- 
+
 ---
 
 # Configure TableView
@@ -76,6 +78,7 @@ ctrl-click label og dra inn i TodoRowController
 tableView.setNumberOfRows..
 let row = tableView.rowControllerAtIndex...
 ```
+PS: Du må ctrl-click og dra en tableView referanse inn i InterfaceController. Det er denne variabelen du bruker i koden ovenfor
 
 ---
 

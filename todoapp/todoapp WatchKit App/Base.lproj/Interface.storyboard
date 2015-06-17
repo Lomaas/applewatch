@@ -8,7 +8,17 @@
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="todoapp_WatchKit_App" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="todoapp_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="IJ0-CA-oOi">
+                            <items>
+                                <tableRow id="adw-ZT-b02">
+                                    <group key="rootItem" width="1" alignment="left" id="bL5-xb-PQe"/>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                </controller>
             </objects>
             <point key="canvasLocation" x="164" y="217"/>
         </scene>
