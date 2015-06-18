@@ -103,14 +103,14 @@ Tips: ctrl-click & dra inn i custom row -klasse, velg action (IBAction) istedet 
 - Send todos fra iPhone istedet for å hardkode i Watch-app
 - Send beskjed til iPhone app fra Watch når bruker fullfører en todo får å synce state
 - Lagre Todo's i iOS-app med NSUserdefaults
-- På Watch kan man motta data fra iPhone app med WCSession og delegation pattern. Hvis iPhone app allerede har sendt ny fresh data vil man kunne hente den dataen rett i awakeWithContext i WKInterfaceController
-
+- På Watch & iOS kan man motta data med WCSession og delegation pattern.
 - Eksempel
+
 ```swift
 let session = WCSession.defaultSession()
 session.delegate = self
 session.activateSession()
-
+session.transferUserInfo(["test" : "hello"])
 ```
 
 - Implementer delegate:
@@ -121,16 +121,6 @@ func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObjec
 }
 
 ```
-
-- For å sende data fra iOS app:
-
-```swift
-let session = WCSession.defaultSession()
-session.activateSession()
-session.transferUserInfo(["test" : "hello"])
-```
-
----
 
 # 4, 5, 6 kan gjøres uavhengig av rekkefølge
 
