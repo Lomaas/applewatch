@@ -116,8 +116,7 @@ session.activateSession()
 - Implementer delegate:
 
 ```swift
-func session(session: WCSession, didReceiveApplicationContext applicationContext: [	String : AnyObject]) {
-	
+func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
 	// Do something with applicationContext
 }
 
@@ -127,7 +126,8 @@ func session(session: WCSession, didReceiveApplicationContext applicationContext
 
 ```swift
 let session = WCSession.defaultSession()
-session.updateApplicationContext(..)
+session.activateSession()
+session.transferUserInfo(["test" : "hello"])
 ```
 
 ---
