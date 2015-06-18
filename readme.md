@@ -117,7 +117,7 @@ session.activateSession()
 
 ```swift
 func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
-	// Do something with applicationContext
+	// Do something with userInfo
 }
 
 ```
